@@ -2,6 +2,7 @@ from allennlp import *
 from allennlp.predictors.predictor import Predictor
 predictor = Predictor.from_path("https://storage.googleapis.com/allennlp-public-models/bidaf-model-2020.03.19.tar.gz")
 
+#textual data 
 passage = """
 Captain America is a fictional superhero appearing in American comic books published by Marvel Comics. Created by cartoonists Joe Simon and Jack Kirby, 
 the character first appeared in Captain America Comics #1 (cover dated March 1941) from Timely Comics, a predecessor of Marvel Comics. 
@@ -19,6 +20,6 @@ Captain America. Since then, the character has been featured in other films and 
 
 result=predictor.predict(
   passage=passage,
-  question="who is alter ego of Steve Rogers?"
+  question="who created this comic?"  #you can enter the questions here to see how the framwork procure results and the accuracy of answers
 )
 print(result['best_span_str'])
